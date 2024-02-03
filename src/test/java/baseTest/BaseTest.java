@@ -12,23 +12,26 @@ import java.time.Duration;
 
 
 public class BaseTest {
-    protected WebDriver webDriver;
+    WebDriver webDriver;
     protected Logger logger = Logger.getLogger(getClass());
     protected PageProvider pageProvider;
 
     @Before
     public void setup() {
+        logger.info("Test was started");
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         logger.info("Browser was opened");
+        pageProvider = new PageProvider(webDriver);
     }
 
     @After
     public void tearDown() {
         webDriver.quit();
         logger.info("Browser was closed");
+        logger.info("Test was ended");
     }
 
 }

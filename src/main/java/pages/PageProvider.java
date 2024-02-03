@@ -12,4 +12,12 @@ public class PageProvider {
     public LoginPage loginPage() {
         return new LoginPage(webDriver);
     }
+
+    public GeneralPage generalPage() {
+        return new GeneralPage(webDriver);
+    }
+
+    public PersonalOffice personalOffice() {
+        return new PersonalOffice(webDriver);
+    }
 }

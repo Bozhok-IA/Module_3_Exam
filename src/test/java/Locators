@@ -1,8 +1,16 @@
-#HomePage
-link_enter_login = .//div[@class='section-item-content nav-sections-item-content']/ul/li[2]/a[1]
+#GeneralPage
+link_enter_login = .//header[@class='page-header']//a[@class='desktop-registration-link']
 my_profile_name = .//span[@aria-expanded="true"]???
 
 #LoginPage
 input_email = .//input[@name='email_address_mob_phone']
 input_password = .//input[@name='login[password]']
-button_login = .//button[@class="action login primary"]
+button_login = .//button[@class='action login primary']
+
+#PersonalPage
+
+#ProductPage
+button_basket = .//button[@id="product-addtocart-button"]
+
+#Catalog
+product_cart = .//div[@class="product-container item-initialized"]
