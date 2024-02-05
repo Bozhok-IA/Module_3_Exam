@@ -20,4 +20,8 @@ public class PageProvider {
     public PersonalOffice personalOffice() {
         return new PersonalOffice(webDriver);
     }
+
+    public HomePage homePage() {
+        return new HomePage(webDriver);
+    }
 }

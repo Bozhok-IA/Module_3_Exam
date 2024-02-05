@@ -3,8 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.headerElement.HeaderElement;
 
 public class PersonalOffice extends ParentPage {
+    private HeaderElement headerElement;
 
     public PersonalOffice(WebDriver webDriver) {
         super(webDriver);

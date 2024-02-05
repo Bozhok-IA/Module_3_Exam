@@ -7,7 +7,8 @@ input_email = .//input[@name='email_address_mob_phone']
 input_password = .//input[@name='login[password]']
 button_login = .//button[@class='action login primary']
 
-#PersonalPage
+#HomePage
+button_exit = .//li[@class="customer-welcome active"]//li[@class="authorization-link"]
 
 #ProductPage
 button_basket = .//button[@id="product-addtocart-button"]
