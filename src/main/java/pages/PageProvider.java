@@ -15,13 +15,17 @@ public class PageProvider {
 
     public GeneralPage generalPage() {
         return new GeneralPage(webDriver);
-    }
+        }
 
-    public PersonalOffice personalOffice() {
-        return new PersonalOffice(webDriver);
+    public ProductCartPage productCartPage() {
+        return new ProductCartPage(webDriver);
     }
 
     public HomePage homePage() {
         return new HomePage(webDriver);
+    }
+
+    public BasketPage basketPage() {
+        return new BasketPage(webDriver);
     }
 }

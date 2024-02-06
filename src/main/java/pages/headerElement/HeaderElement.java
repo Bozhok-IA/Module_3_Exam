@@ -1,8 +1,8 @@
 package pages.headerElement;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.CommonActionsWithElement;
 import pages.GeneralPage;
 
@@ -10,16 +10,18 @@ public class HeaderElement extends CommonActionsWithElement {
     public HeaderElement(WebDriver webDriver) {
         super(webDriver);
     }
+    @FindBy(xpath = ".//div[@class='page-header page-header-v1']//span[@class='account-name']")
+    private WebElement profileName;
+
+    @FindBy(xpath = ".//li[@class='customer-welcome active']//li[@class='authorization-link']")
+    private WebElement buttonExit;
 
     public HeaderElement checkIsProfileNameVisible(String name) {
-        WebElement profileName = webDriver.findElement(
-                By.xpath(".//div[@class='page-header page-header-v1']//span[@class='account-name']"));
         checkTextInElement(profileName, name);
         return this;
     }
 
     public GeneralPage clickOnButtonExit() {
-        WebElement buttonExit = webDriver.findElement(By.xpath(".//li[@class='customer-welcome active']//li[@class='authorization-link']"));
         clickOnElement(buttonExit);
         return new GeneralPage(webDriver);
     }
