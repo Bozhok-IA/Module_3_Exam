@@ -32,4 +32,8 @@ public class PageProvider {
     public PersonalAreaPage personalArea() {
         return new PersonalAreaPage(webDriver);
     }
+
+    public CreateNewCustomerPage createNewCustomerPage() {
+        return new CreateNewCustomerPage(webDriver);
+    }
 }

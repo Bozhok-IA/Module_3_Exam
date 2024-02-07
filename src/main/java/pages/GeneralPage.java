@@ -1,7 +1,6 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,7 +32,7 @@ public class GeneralPage extends ParentPage{
         }
     }
 
-    public GeneralPage checkIsLoginLinkVisible() {
+    public GeneralPage checkIsLoginButtonVisible() {
 //        WebElement loginLink = webDriver.findElement(
 //                By.xpath(".//header[@class='page-header']//a[@class='desktop-registration-link']"));
         checkIsElementVisible(loginLink);
@@ -42,7 +41,7 @@ public class GeneralPage extends ParentPage{
 
     }
 
-    public void clickOnLoginLink() {
+    public void clickOnLoginButton() {
         clickOnElement(loginLink);
     }
 
