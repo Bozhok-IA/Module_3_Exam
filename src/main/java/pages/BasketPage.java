@@ -13,6 +13,16 @@ public class BasketPage extends ParentPage{
         super(webDriver);
     }
 
+    @Override
+    String getRelativeUrl() {
+        return "/checkout/cart/";
+    }
+
+    public BasketPage checkIsRedirectToBasketPage() {
+        checkUrl();
+        return this;
+    }
+
     public BasketPage checkIsNameBasketPageVisible() {
         checkIsElementVisible(nameBasketPage);
         return this;

@@ -19,8 +19,13 @@ public class LoginPage extends ParentPage {
         super(webDriver);
     }
 
+    @Override
+    String getRelativeUrl() {
+        return "/customer/account/login/referer/(.*)/";
+    }
+
     public LoginPage checkIsRedirectToLoginPage() {
-       // TODO checkUrl();
+       checkUrlWithPattern();
         return this;
     }
 

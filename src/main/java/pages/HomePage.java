@@ -20,13 +20,18 @@ public class HomePage extends ParentPage {
         super(webDriver);
     }
 
+    @Override
+    String getRelativeUrl() {
+        return "/new.html";
+    }
+
     public HeaderElement getHeader() {
         return new HeaderElement(webDriver);
     }
 
 
     public HomePage checkIsRedirectToHomePage() {
-        // TODO checkUrl();
+        checkUrl();
         return this;
     }
 

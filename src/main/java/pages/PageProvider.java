@@ -28,4 +28,8 @@ public class PageProvider {
     public BasketPage basketPage() {
         return new BasketPage(webDriver);
     }
+
+    public PersonalAreaPage personalArea() {
+        return new PersonalAreaPage(webDriver);
+    }
 }

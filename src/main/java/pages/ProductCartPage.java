@@ -25,8 +25,13 @@ public class ProductCartPage extends ParentPage {
         super(webDriver);
     }
 
+    @Override
+    String getRelativeUrl() {
+        return "/(\\d+).html";
+    }
+
     public ProductCartPage checkIsRedirectToProductCartPage() {
-        // TODO checkUrl();
+        checkUrlWithPattern();
         return this;
     }
 

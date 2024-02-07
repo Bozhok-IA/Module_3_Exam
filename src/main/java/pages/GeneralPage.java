@@ -18,10 +18,15 @@ public class GeneralPage extends ParentPage{
         super(webDriver);
     }
 
+    @Override
+    String getRelativeUrl() {
+        return "/";
+    }
+
     public void openGeneralPage() {
         try {
-            webDriver.get("https://a-shop.ua/");
-            logger.info("General page was opened");
+            webDriver.get(baseUrl);
+            logger.info("General page was opened " + baseUrl);
         } catch (Exception e) {
             logger.error("Can not open General page");
             Assert.fail("Can not open General page");
