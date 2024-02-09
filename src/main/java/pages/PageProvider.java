@@ -36,4 +36,8 @@ public class PageProvider {
     public CreateNewCustomerPage createNewCustomerPage() {
         return new CreateNewCustomerPage(webDriver);
     }
+
+    public ResultSearch resultSearch() {
+        return new ResultSearch(webDriver);
+    }
 }

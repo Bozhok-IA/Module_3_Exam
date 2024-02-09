@@ -39,7 +39,7 @@ public class CommonActionsWithElement {
 
     protected void clickOnElement(WebElement element) {
         try {
-            webDriverWaite05.until(ExpectedConditions.elementToBeClickable(element));
+            webDriverWaite15.until(ExpectedConditions.elementToBeClickable(element));
             String elementName = getElementName(element);
             element.click();
             logger.info("Element was clicked " + elementName);
