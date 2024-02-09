@@ -13,6 +13,9 @@ public class GeneralPage extends ParentPage{
     @FindBy(xpath = ".//i[@class='item-icon fas mgz-fa-home ']")
     private WebElement buttonHomePage;
 
+    @FindBy(xpath = ".//a[@class='action showcart']")
+    private WebElement buttonBasket;
+
     public GeneralPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -50,4 +53,8 @@ public class GeneralPage extends ParentPage{
         return new HomePage(webDriver);
     }
 
+    public BasketPage clickOnBasketPage() {
+        clickOnElement(buttonBasket);
+        return new BasketPage(webDriver);
+    }
 }

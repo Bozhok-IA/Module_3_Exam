@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,9 @@ public class ProductCartPage extends ParentPage {
 
     @FindBy(xpath = ".//a[@class='action showcart']")
     private WebElement buttonGoToBasket;
+
+    @FindBy(xpath = ".//button[@class='action primary tocart added']")
+    private WebElement buttonNameAdded;
 
     public ProductCartPage(WebDriver webDriver) {
         super(webDriver);
@@ -67,5 +71,18 @@ public class ProductCartPage extends ParentPage {
     public BasketPage clickOnTheButtonGoToBasket() {
         clickOnElement(buttonGoToBasket);
         return new BasketPage(webDriver);
+    }
+
+    public String getProductName() {
+        WebElement productName = webDriver.findElement(
+                By.xpath(".//span[@data-ui-id='page-title-wrapper']"));
+        logger.info("Product name is: " + productName.getText());
+        return productName.getText();
+    }
+
+    public ProductCartPage checkIsNameButtonChange() {
+        checkIsElementVisible(buttonNameAdded);
+        return this;
+
     }
 }

@@ -39,9 +39,18 @@ public class HomePage extends ParentPage {
         return webDriver.findElements(By.xpath(String.format(productCartLocator)));
     }
 
-    public ProductCartPage clickFirstProductCart() {
-        getProductCartList().get(0).click();
-        logger.info("Product cart was clicked");
+    public ProductCartPage clickFirstProductCartAndGetProductName() {
+        WebElement firstProductCart = getProductCartList().get(0);
+        String productName = firstProductCart.getText();
+        firstProductCart.click();
+        logger.info("Product cart was clicked" + productName);
         return new ProductCartPage(webDriver);
+    }
+    // check and compare the first product name with the product name on the product page
+    public boolean compareFirstProductCartNameWithProductPageName() {
+        String firstProductName = getProductCartList().get(0).getText();
+        String productPageName = new ProductCartPage(webDriver).getProductName();
+        logger.info("Product name from the product cart: " + firstProductName);
+        return firstProductName.equals(productPageName);
     }
 }
