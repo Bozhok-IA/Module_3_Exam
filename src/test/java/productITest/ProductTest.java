@@ -26,7 +26,7 @@ public class ProductTest extends BaseTest {
     @After
     public void clearBasket() {
         pageProvider.generalPage().openGeneralPage();
-        pageProvider.generalPage().clickOnBasketPage();
+        pageProvider.generalPage().clickOnButtonBasket();
         pageProvider.basketPage().clearBasket();
         pageProvider.basketPage().checkIsButtonStartShoppingVisible();
     }

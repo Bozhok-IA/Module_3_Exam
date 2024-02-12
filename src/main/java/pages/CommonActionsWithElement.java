@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,6 +24,7 @@ public class CommonActionsWithElement {
     }
 
     protected void checkIsElementVisible(WebElement webElement) {
+        webDriverWaite05.until(ExpectedConditions.visibilityOf(webElement));
         Assert.assertTrue("Element is not visible", isElementDisplayed(webElement));
     }
 
@@ -77,6 +79,20 @@ public class CommonActionsWithElement {
             String elementText = element.getText();
             Assert.assertEquals("Text in element not expected", text, elementText);
             logger.info("Text in element is expected");
+        } catch (Exception e) {
+            logger.error("Can not work with element ");
+            Assert.fail("Can not work with element " + e);
+        }
+    }
+
+    //hover over the element
+    protected void hoverOverElement(WebElement element) {
+        try {
+            webDriverWaite15.until(ExpectedConditions.visibilityOf(element));
+            webDriverWaite15.until(ExpectedConditions.elementToBeClickable(element));
+            Actions actions = new Actions(webDriver);
+            actions.moveToElement(element).build().perform();
+            logger.info("Hover over the element " + getElementName(element));
         } catch (Exception e) {
             logger.error("Can not work with element ");
             Assert.fail("Can not work with element " + e);

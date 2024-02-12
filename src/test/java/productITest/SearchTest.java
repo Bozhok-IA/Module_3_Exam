@@ -7,18 +7,17 @@ import org.junit.Test;
 public class SearchTest extends BaseTest {
 
 @Test
-@Ignore
-    public void searchProductTest() {
+    public void searchProductByCodeTest() {
         pageProvider.generalPage().openGeneralPage();
         pageProvider.generalPage().clickOnHomePage();
         pageProvider.homePage().checkIsRedirectToHomePage();
         pageProvider.homePage().clickFirstProductCartAndGetProductName();
         pageProvider.productCartPage().getProductName();
-        pageProvider.productCartPage().getProductCode();
+        String productCode = pageProvider.productCartPage().getProductCode();
         pageProvider.productCartPage().enterProductCodeInSearch();
         pageProvider.productCartPage().clickOnSearchButton();
         pageProvider.resultSearch().checkIsRedirectToResultSearchPage();
         pageProvider.resultSearch().checkIsMassageResultSearchVisible();
-//        pageProvider.resultSearch().checkAndCompareProductCodeWithResultSearchCode();
+        pageProvider.resultSearch().checkAndCompareProductCodeWithResultSearchCode(productCode);
     }
 }

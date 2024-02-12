@@ -81,16 +81,15 @@ public class ProductCartPage extends ParentPage {
     }
 
     public String getProductCode() {
-        WebElement productCode = webDriver.findElement(
+        WebElement productCode1 = webDriver.findElement(
                 By.xpath(".//div[@class='product attribute sku']//div[@class='value']"));
-        logger.info("Product code is: " + productCode.getText());
-        return productCode.getText();
+        logger.info("Product code is: " + productCode1.getText());
+        return productCode1.getText();
     }
 
     public ProductCartPage checkIsNameButtonChange() {
         checkIsElementVisible(buttonNameAdded);
         return this;
-
     }
 
     public void enterProductCodeInSearch() {

@@ -14,10 +14,13 @@ public class BasketPage extends ParentPage {
     private WebElement nameBasketPage;
 
     @FindBy(xpath = ".//h3[@class='title-empty-cart']")
-    private WebElement titleEmptyBasket;
+    private WebElement titleEmptyCart;
 
     @FindBy(xpath = ".//button[@class='start-shopping']")
     private WebElement buttonStartShopping;
+
+    @FindBy(xpath = ".//button[@class=\"action primary checkout\"]")
+    private WebElement buttonToOrder;
 
     public BasketPage(WebDriver webDriver) {
         super(webDriver);
@@ -51,6 +54,15 @@ public class BasketPage extends ParentPage {
     public BasketPage checkIsButtonStartShoppingVisible() {
         webDriverWaite15.until(ExpectedConditions.visibilityOfAllElements(buttonStartShopping));
         checkIsElementVisible(buttonStartShopping);
+        return this;
+    }
+
+    public void checkIsButtonToOrderVisible() {
+        checkIsElementVisible(buttonToOrder);
+    }
+
+    public BasketPage checkTextInEmptyBasket(String text) {
+     checkTextInElement(titleEmptyCart, text.toUpperCase());
         return this;
     }
 }
