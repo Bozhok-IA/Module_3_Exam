@@ -1,0 +1,16 @@
+BASE_URT = https://a-shop.ua/new.html
+USER_EMAIL = bozhok.iryna@gmail.com
+USER_PASSWORD = qwerty123456
+
+# TestCases №01 The verify functionality of the login Page
+Preconditions:
+1. Open the browser
+2. Navigate to the BASE_URT
+3. Click on the "Вхід" button
+Steps:
+1. Enter the USER_EMAIL into the "Електронна пошта" field
+2. Enter the USER_PASSWORD into the "Пароль" field
+3. Click on the "Вхід" button
+Expected result:
+The "Вхід" button is not displayed
+Check the username in the header

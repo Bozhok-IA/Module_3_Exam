@@ -1,0 +1,28 @@
+#GeneralPage
+link_enter_login = .//header[@class='page-header']//a[@class='desktop-registration-link']
+my_profile_name =
+
+#LoginPage
+input_email = .//input[@name='email_address_mob_phone']
+input_password = .//input[@name='login[password]']
+button_login = .//button[@class='action login primary']
+
+#HomePage
+icon_home_page = .//i[@class='item-icon fas mgz-fa-home ']
+button_exit = .//li[@class='customer-welcome active"]//li[@class="authorization-link']
+
+#ProductPage
+button_basket = .//button[@id='product-addtocart-button']
+select_size = .//div[@class='swatch-option text']
+select_color = .//div[@class='swatch-option image selected']
+icon_basket = .//a[@class='action showcart']
+product_name = .//h1[@class="page-title"]
+code_product = .//div[@class='product attribute sku']
+
+
+#Catalog
+product_cart = .//div[@class='product-container item-initialized']
+
+#BasketPage
+product_name = .//strong[@class="product-item-name"]
+title_basket = .//span[text()='Кошик']
